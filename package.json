@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "node ./node_modules/vite/bin/vite.js build",
-    "preview": "vite preview"
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -33,10 +34,12 @@
     "zustand": "^5.0.0"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.47.0",
     "@tailwindcss/vite": "^4.3.3",
     "@vitejs/plugin-react": "^4.7.0",
     "autoprefixer": "^10.5.4",
     "tailwindcss": "^4.3.3",
-    "vite": "^6.4.3"
+    "vite": "^6.4.3",
+    "wrangler": "^4.114.0"
   }
 }
